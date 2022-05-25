@@ -1,5 +1,7 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -175,7 +177,6 @@ public class Game {
         jFrame.setSize(400, 200);
         jFrame.setResizable(false);
         jFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        jFrame.setVisible(true);
 
         JPanel text = new JPanel();
         JLabel label = new JLabel("Where would you like to play?");
@@ -222,6 +223,7 @@ public class Game {
             jFrame.dispose();
             askForSideWindow();
         });
+        jFrame.setVisible(true);
 
         if (gameType == 1) runGameInConsole();
     }
@@ -299,6 +301,7 @@ public class Game {
         for (int i = 0; i < 9; i++) {
             buttons[i] = new JButton();
             buttons[i].setBackground(new Color(0x9A7EA6));
+            buttons[i].setBorder(new LineBorder(new Color(0x42373D)));
             int buttonNum = i;
             buttons[i].addActionListener(e -> {
                 if (curPlayer == 1) {
